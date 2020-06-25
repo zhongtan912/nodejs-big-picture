@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     'comma-dangle': 0,
     indent: 'off',
-    'no-console': 'off'
+    'no-console': 'off',
+    'linebreak-style': 'off'
   }
 };

@@ -2,10 +2,17 @@ const express = require('express');
 const debug = require('debug')('app');
 const morgan = require('morgan');
 const path = require('path');
+const bp = require('body-parser');
+const cookieparser = require('cookie-parser');
+const session = require('express-session');
 
 const app = express();
 
 app.use(morgan('combined'));
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: false }));
+app.use(cookieparser());
+app.use(session({ secret: 'library' }));
 debug('hello world');
 
 app.all('/', (req, res, next) => {
